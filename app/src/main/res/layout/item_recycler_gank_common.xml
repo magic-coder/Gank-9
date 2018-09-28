@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="1dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:padding="10dp"
+        tools:ignore="SmallSp">
+
+        <TextView
+            android:id="@+id/item_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="基于QQ、微信和微博原生api文档，整合的第三方分享和登陆框架 (arvinljw)" />
+
+        <TextView
+            android:id="@+id/item_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/item_desc"
+            app:layout_constraintTop_toBottomOf="@id/item_desc"
+            app:layout_goneMarginStart="5dp"
+            tools:text="Android" />
+
+        <TextView
+            android:id="@+id/item_who"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@id/item_type"
+            app:layout_constraintStart_toEndOf="@id/item_type"
+            app:layout_constraintTop_toTopOf="@id/item_type"
+            app:layout_goneMarginStart="5dp"
+            tools:text="who" />
+
+        <TextView
+            android:id="@+id/item_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@id/item_who"
+            app:layout_constraintStart_toEndOf="@id/item_who"
+            app:layout_constraintTop_toTopOf="@id/item_who"
+            tools:text="2018-07-12" />
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>
