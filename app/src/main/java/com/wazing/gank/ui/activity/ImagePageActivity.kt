@@ -3,20 +3,18 @@ package com.wazing.gank.ui.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.LinearSnapHelper
 import android.view.View
 import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.wazing.gank.R
-import com.wazing.gank.base.BaseActivity
 import com.wazing.gank.base.adapter.BaseRecyclerViewAdapter
 import com.wazing.gank.base.adapter.BaseViewHolder
 import com.wazing.gank.bean.Gank
 import com.wazing.gank.utils.GlideApp
-import com.wazing.gank.utils.logd
 import kotlinx.android.synthetic.main.layout_refresh_recycler.*
 
-class ImagePageActivity : BaseActivity() {
+class ImagePageActivity : AppCompatActivity() {
 
     companion object {
         private const val KEY_GANK = "gank"
@@ -29,7 +27,7 @@ class ImagePageActivity : BaseActivity() {
                 with(Intent(context, ImagePageActivity::class.java)) {
                     putExtra(KEY_POSITION, if (list.size == 1) 0 else position)
                     putParcelableArrayListExtra(KEY_GANK, list)
-                }!!
+                }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,10 +45,10 @@ class ImagePageActivity : BaseActivity() {
         val adapter = ImageAdapter()
         adapter.setNewItem(gankList)
 
-        val linearSnapHelper = LinearSnapHelper()
+        val linearSnapHelper = androidx.recyclerview.widget.LinearSnapHelper()
         linearSnapHelper.attachToRecyclerView(recycler_view)
 
-        recycler_view.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        recycler_view.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this, androidx.recyclerview.widget.LinearLayoutManager.HORIZONTAL, false)
         recycler_view.adapter = adapter
 
         if (position > 0) {

@@ -1,12 +1,11 @@
 package com.wazing.gank.ui.fragment
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModel
-import android.arch.lifecycle.ViewModelProvider
-import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.view.View
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import com.wazing.gank.R
 import com.wazing.gank.base.BaseLazyFragment
 import com.wazing.gank.bean.Gank
@@ -57,8 +56,8 @@ class CategoryFragment : BaseLazyFragment() {
             when (it?.status) {
                 Status.FAILED -> {
                     if (adapter.getAllItem().isEmpty()) {
-                        Snackbar.make(view!!, it.msg!!,
-                                Snackbar.LENGTH_INDEFINITE).setAction("重试") { viewModel.refresh() }
+                        com.google.android.material.snackbar.Snackbar.make(view!!, it.msg!!,
+                                com.google.android.material.snackbar.Snackbar.LENGTH_INDEFINITE).setAction("重试") { viewModel.refresh() }
                                 .show()
                     } else {
                         adapter.loadMoreFail()

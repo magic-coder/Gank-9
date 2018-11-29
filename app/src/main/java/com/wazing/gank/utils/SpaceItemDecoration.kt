@@ -1,16 +1,16 @@
 package com.wazing.gank.utils
 
 import android.graphics.Rect
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 
 class SpaceItemDecoration @JvmOverloads constructor(
         private val spanCount: Int = 1,
         private val spacing: Int,
         private val includeEdge: Boolean
-) : RecyclerView.ItemDecoration() {
+) : androidx.recyclerview.widget.RecyclerView.ItemDecoration() {
 
-    override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+    override fun getItemOffsets(outRect: Rect, view: View, parent: androidx.recyclerview.widget.RecyclerView, state: androidx.recyclerview.widget.RecyclerView.State) {
 //        val layoutManager = parent.layoutManager ?: return
 //        val spanCount: Int = when (layoutManager) {
 //            is LinearLayoutManager -> 1

@@ -1,7 +1,7 @@
 package com.wazing.gank.respository
 
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.google.gson.Gson
 import com.wazing.gank.bean.Gank
 import com.wazing.gank.bean.History

@@ -1,10 +1,6 @@
 package com.wazing.gank.ui.fragment
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentPagerAdapter
-import android.support.v4.view.ViewPager
 import android.view.View
 import com.wazing.gank.R
 import com.wazing.gank.base.BaseFragment
@@ -16,8 +12,6 @@ import kotlin.collections.ArrayList
 
 class TabLayoutFragment : BaseFragment() {
 
-    private var currentTitle: CharSequence? = null
-
     override fun getLayoutId(): Int = R.layout.fragment_tab_layout
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -26,7 +20,7 @@ class TabLayoutFragment : BaseFragment() {
         val tabLayout = (activity as MainActivity).tab_layout
 
         val titleList = Arrays.asList("all", "Android", "iOS", "App", "前端", "瞎推荐", "拓展资源", "福利", "休息视频")
-        val fragmentList: ArrayList<Fragment> = ArrayList()
+        val fragmentList: ArrayList<androidx.fragment.app.Fragment> = ArrayList()
         for (i in titleList) {
             fragmentList.add(CategoryFragment.newInstance(i))
         }
@@ -37,7 +31,7 @@ class TabLayoutFragment : BaseFragment() {
         tabLayout.setupWithViewPager(view_pager)
 
         (activity as MainActivity).toolbar.title = "全部"
-        view_pager.addOnPageChangeListener(object : ViewPager.SimpleOnPageChangeListener() {
+        view_pager.addOnPageChangeListener(object : androidx.viewpager.widget.ViewPager.SimpleOnPageChangeListener() {
             override fun onPageSelected(position: Int) {
                 (activity as MainActivity).toolbar.title = when (titleList[position]) {
                     "all" -> "全部"
@@ -48,12 +42,12 @@ class TabLayoutFragment : BaseFragment() {
     }
 
     private class ViewPagerAdapter constructor(
-            fragmentManager: FragmentManager,
+            fragmentManager: androidx.fragment.app.FragmentManager,
             private val titleList: List<String>,
-            private val fragmentList: List<Fragment>
-    ) : FragmentPagerAdapter(fragmentManager) {
+            private val fragmentList: List<androidx.fragment.app.Fragment>
+    ) : androidx.fragment.app.FragmentPagerAdapter(fragmentManager) {
 
-        override fun getItem(position: Int): Fragment = fragmentList[position]
+        override fun getItem(position: Int): androidx.fragment.app.Fragment = fragmentList[position]
 
         override fun getCount(): Int = fragmentList.size
 

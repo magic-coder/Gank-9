@@ -3,8 +3,8 @@ package com.wazing.gank.ui.activity
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
 import android.view.View
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.wazing.gank.R
 import com.wazing.gank.base.BaseInjectorActivity
 import com.wazing.gank.ui.fragment.HomeFragment
@@ -15,7 +15,7 @@ class MainActivity : BaseInjectorActivity() {
 
     private var tempFragmentTag: String? = null
 
-    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+    private val mOnNavigationItemSelectedListener = com.google.android.material.bottomnavigation.BottomNavigationView.OnNavigationItemSelectedListener { item ->
         return@OnNavigationItemSelectedListener when (item.itemId) {
             R.id.navigation_home -> {
                 fab.visibility = View.VISIBLE

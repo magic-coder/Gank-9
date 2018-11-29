@@ -1,25 +1,23 @@
 package com.wazing.gank.di.component
 
-import com.wazing.gank.AppApplication
+import com.wazing.gank.App
+import com.wazing.gank.di.module.AppModule
 import com.wazing.gank.di.module.InjectActivityModule
 import com.wazing.gank.di.module.NetModule
-import com.wazing.gank.respository.net.ApiService
 import dagger.Component
 import dagger.android.AndroidInjectionModule
+import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
-import retrofit2.Retrofit
 
 @Component(modules = [
-    AndroidInjectionModule::class,
-    AndroidSupportInjectionModule::class,
+    AppModule::class,
+    NetModule::class,
     InjectActivityModule::class,
-    NetModule::class
+    AndroidInjectionModule::class,
+    AndroidSupportInjectionModule::class
 ])
-interface AppComponent {
+interface AppComponent : AndroidInjector<App> {
 
-    fun inject(application: AppApplication)
-
-    fun getRetrofit(): Retrofit
-
-    fun getApiService(): ApiService
+    @Component.Builder
+    abstract class Builder : AndroidInjector.Builder<App>()
 }

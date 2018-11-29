@@ -1,8 +1,8 @@
 package com.wazing.gank.viewmodel
 
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.Transformations
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Transformations
+import androidx.lifecycle.ViewModel
 import com.wazing.gank.bean.Gank
 import com.wazing.gank.bean.Listing
 import com.wazing.gank.respository.CategoryRepository

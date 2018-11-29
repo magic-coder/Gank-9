@@ -1,16 +1,12 @@
 package com.wazing.gank.ui.fragment
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModel
-import android.arch.lifecycle.ViewModelProvider
-import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.support.design.widget.BottomSheetDialog
-import android.support.design.widget.Snackbar
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import com.wazing.gank.R
 import com.wazing.gank.base.BaseFragment
 import com.wazing.gank.bean.Gank
@@ -49,7 +45,7 @@ class HomeFragment : BaseFragment() {
 
     private val historyAdapter by lazy { HistoryAdapter() }
 
-    private var historyBottomSheetDialog: BottomSheetDialog? = null
+    private var historyBottomSheetDialog: com.google.android.material.bottomsheet.BottomSheetDialog? = null
 
     override fun getLayoutId(): Int = R.layout.layout_refresh_recycler
 
@@ -65,13 +61,13 @@ class HomeFragment : BaseFragment() {
         viewModel.historyList.observe(this, Observer {
             it?.let { list ->
                 if (historyBottomSheetDialog == null) {
-                    val historyRv = RecyclerView(requireContext())
+                    val historyRv = androidx.recyclerview.widget.RecyclerView(requireContext())
                     historyRv.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                             ViewGroup.LayoutParams.MATCH_PARENT)
-                    historyRv.layoutManager = LinearLayoutManager(requireContext())
+                    historyRv.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(requireContext())
                     historyRv.adapter = historyAdapter
 
-                    historyBottomSheetDialog = BottomSheetDialog(activity!!)
+                    historyBottomSheetDialog = com.google.android.material.bottomsheet.BottomSheetDialog(activity!!)
                     historyBottomSheetDialog?.apply {
                         setContentView(historyRv)
                     }
@@ -93,8 +89,8 @@ class HomeFragment : BaseFragment() {
         viewModel.historyNetworkState.observe(this, Observer { it ->
             when (it?.status) {
                 Status.FAILED -> {
-                    Snackbar.make(view, it.msg!!,
-                            Snackbar.LENGTH_INDEFINITE).setAction("重试") { viewModel.refresh() }
+                    com.google.android.material.snackbar.Snackbar.make(view, it.msg!!,
+                            com.google.android.material.snackbar.Snackbar.LENGTH_INDEFINITE).setAction("重试") { viewModel.refresh() }
                             .show()
                 }
                 else -> {

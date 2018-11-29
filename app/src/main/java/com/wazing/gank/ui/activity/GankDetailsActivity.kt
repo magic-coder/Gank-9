@@ -8,11 +8,11 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.support.v4.content.FileProvider
 import android.view.*
 import android.webkit.*
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.FileProvider
 import com.wazing.gank.R
-import com.wazing.gank.base.BaseActivity
 import com.wazing.gank.bean.Gank
 import com.wazing.gank.utils.checkSelfPermission
 import com.wazing.gank.utils.interceptBitmap
@@ -20,7 +20,7 @@ import com.wazing.gank.utils.saveImage
 import kotlinx.android.synthetic.main.activity_gank_details.*
 import org.jetbrains.anko.toast
 
-class GankDetailsActivity : BaseActivity() {
+class GankDetailsActivity : AppCompatActivity() {
 
     companion object {
         private const val KEY_GANK = "gank"
@@ -28,7 +28,7 @@ class GankDetailsActivity : BaseActivity() {
         fun newInstance(context: Context, gank: Gank) =
                 with(Intent(context, GankDetailsActivity::class.java)) {
                     putExtra(KEY_GANK, gank)
-                }!!
+                }
     }
 
     private val gank: Gank by lazy { intent.getParcelableExtra(KEY_GANK) as Gank }

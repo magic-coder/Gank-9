@@ -1,8 +1,8 @@
 package com.wazing.gank.base.adapter
 
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.StaggeredGridLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
@@ -14,7 +14,7 @@ import java.util.*
 
 abstract class BaseMultiRecyclerViewAdapter<T> @JvmOverloads constructor(
         private val dataSourceList: ArrayList<T> = ArrayList()
-) : RecyclerView.Adapter<BaseViewHolder>() {
+) : androidx.recyclerview.widget.RecyclerView.Adapter<BaseViewHolder>() {
 
     companion object {
         internal const val TYPE_ITEM = 10000
@@ -91,11 +91,11 @@ abstract class BaseMultiRecyclerViewAdapter<T> @JvmOverloads constructor(
         }
     }
 
-    override fun onAttachedToRecyclerView(recyclerView: RecyclerView) {
+    override fun onAttachedToRecyclerView(recyclerView: androidx.recyclerview.widget.RecyclerView) {
         super.onAttachedToRecyclerView(recyclerView)
         val layoutManager = recyclerView.layoutManager
-        if (layoutManager != null && layoutManager is GridLayoutManager) {
-            layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+        if (layoutManager != null && layoutManager is androidx.recyclerview.widget.GridLayoutManager) {
+            layoutManager.spanSizeLookup = object : androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup() {
                 override fun getSpanSize(position: Int): Int {
                     return if (isOpenLoadMore && itemCount == position + 1) {
                         layoutManager.spanCount
@@ -108,7 +108,7 @@ abstract class BaseMultiRecyclerViewAdapter<T> @JvmOverloads constructor(
     override fun onViewAttachedToWindow(holder: BaseViewHolder) {
         super.onViewAttachedToWindow(holder)
         val lp = holder.itemView.layoutParams
-        if (lp != null && lp is StaggeredGridLayoutManager.LayoutParams) {
+        if (lp != null && lp is androidx.recyclerview.widget.StaggeredGridLayoutManager.LayoutParams) {
             val position = holder.adapterPosition
             if (isOpenLoadMore && itemCount == position + 1) {
                 lp.isFullSpan = true

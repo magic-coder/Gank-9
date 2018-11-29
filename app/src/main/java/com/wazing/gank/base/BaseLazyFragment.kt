@@ -38,7 +38,7 @@ abstract class BaseLazyFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initViews(view)
+        initViews()
     }
 
     @Synchronized
@@ -61,6 +61,6 @@ abstract class BaseLazyFragment : BaseFragment() {
 
     abstract fun onUserVisible(isVisibleToUser: Boolean)
 
-    private fun initViews(view: View) {}
+    private fun initViews() {}
 
 }
