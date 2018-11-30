@@ -5,13 +5,13 @@
 
 # 截图
 
-主界面 | 历史 | 文章详情 |
---- | --- | ---|
-![主界面][home]|![历史][history]|![文章详情][article_details]
+<img src="screenshots/home.png" width="239" height="487" alt="home"/>
+<img src="screenshots/history.png" width="239" height="487" alt="history"/>
+<img src="screenshots/web_details.png" width="239" height="487" alt="web_details"/>
 
-分类 | 福利 | 福利详情 |
---- | --- | ---|
-![分类][category]|![妹纸][meizhi]|![妹纸大图查看][meizhi_details]
+<img src="screenshots/category.png" width="239" height="487" alt="category"/>
+<img src="screenshots/girl.png" width="239" height="487" alt="girl"/>
+<img src="screenshots/girl_large.png" width="239" height="487" alt="girl_large"/>
 
 # 依赖
 - LiveData
@@ -29,6 +29,10 @@
 - ViewModel搭配LiveData的使用
 - 使用Lifecycle来管理生命周期
 
+# TODO
+- Jetpack组件`Navigation`和`Room`集成（Paging后续可能会加入）
+- 添加浏览历史记录和收藏功能
+
 # 协议
 Copyright 2018 Zheng Wang
 
@@ -36,20 +40,13 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+  http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
-[home]:http://p8i9mda7f.bkt.clouddn.com/18-10-8/97172381.jpg "主界面"
-[history]:http://p8i9mda7f.bkt.clouddn.com/18-10-8/34590332.jpg "历史"
-[article_details]:http://p8i9mda7f.bkt.clouddn.com/18-10-8/32105300.jpg "文章详情"
-[category]:http://p8i9mda7f.bkt.clouddn.com/18-10-8/27672822.jpg "分类"
-[meizhi]:http://p8i9mda7f.bkt.clouddn.com/18-10-8/80144158.jpg "妹纸"
-[meizhi_details]:http://p8i9mda7f.bkt.clouddn.com/18-10-8/24413998.jpg "妹纸"
 
 [rxJava]:https://github.com/ReactiveX/RxJava
 [dagger]:https://github.com/google/dagger
