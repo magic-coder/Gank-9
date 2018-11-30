@@ -1,19 +1,23 @@
-# Gank
+Gank
+----
 
 干货 - LiveData, ViewModel, Retrofit, RxJava, Dagger2 架构，采用kotlin语言开发，仅用于学习。
 > 接口Api：https://gank.io/api
+>
+> demo下载：https://fir.im/x7w6
 
-# 截图
+Screenshot
+---
+![home](screenshots\home.png "home")
+![history](screenshots\history.png "home")
+![web_details](screenshots\web_details.png "home")
 
-<img src="screenshots/home.png" width="239" height="487" alt="home"/>
-<img src="screenshots/history.png" width="239" height="487" alt="history"/>
-<img src="screenshots/web_details.png" width="239" height="487" alt="web_details"/>
+![category](screenshots\category.png "home")
+![girl](screenshots\girl.png "home")
+![girl_large](screenshots\girl_large.png "home")
 
-<img src="screenshots/category.png" width="239" height="487" alt="category"/>
-<img src="screenshots/girl.png" width="239" height="487" alt="girl"/>
-<img src="screenshots/girl_large.png" width="239" height="487" alt="girl_large"/>
-
-# 依赖
+Reference
+---
 - LiveData
 - ViewModel
 - Lifecycle
@@ -21,7 +25,8 @@
 - [RxJava2][rxJava]
 - [Dagger2][dagger]
 
-# 功能点
+Points
+------
 - AppBarLayout、BottomNavigationView和FloatingActionButton在配合滑动列表滑动的时候隐藏/显示，[具体代码][BottomNavigationBehavior]
 - Android 5.0上 webView 截取全屏方法，[具体代码-73到88行][interceptImage]
 - 使用RecyclerView代替ViewPager分页查看图片，[具体代码][recyclerview_pager]
@@ -29,11 +34,13 @@
 - ViewModel搭配LiveData的使用
 - 使用Lifecycle来管理生命周期
 
-# TODO
+TODO
+---
 - Jetpack组件`Navigation`和`Room`集成（Paging后续可能会加入）
 - 添加浏览历史记录和收藏功能
 
-# 协议
+License
+---
 Copyright 2018 Zheng Wang
 
 Licensed under the Apache License, Version 2.0 (the "License");
