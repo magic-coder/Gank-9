@@ -8,13 +8,13 @@ Gank
 
 Screenshot
 ---
-![home](screenshots\home.png "home")
-![history](screenshots\history.png "home")
-![web_details](screenshots\web_details.png "home")
+![home](screenshots/home.png "home")
+![history](screenshots/history.png "history")
+![web_details](screenshots/web_details.png "web_details")
 
-![category](screenshots\category.png "home")
-![girl](screenshots\girl.png "home")
-![girl_large](screenshots\girl_large.png "home")
+![category](screenshots/category.png "category")
+![girl](screenshots/girl.png "girl")
+![girl_large](screenshots/girl_large.png "girl_large")
 
 Reference
 ---
